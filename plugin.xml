@@ -7,12 +7,11 @@
     <license>Apache 2.0</license>
     <keywords>cordova,powermanagement</keywords>
 
-    <js-module src="www/powermanagement.js" name="device">
-        <clobbers target="window.powerManagement" />
-    </js-module>
-
     <!-- wp7 -->
     <platform name="wp7">
+        <js-module src="www/powermanagement.js" name="device">
+            <clobbers target="cordova.plugins.powerManagement" />
+        </js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="PowerManagement">
                 <param name="wp-package" value="PowerManagement"/>
@@ -24,6 +23,9 @@
 
     <!-- wp8 -->
     <platform name="wp8">
+        <js-module src="www/powermanagement.js" name="device">
+            <clobbers target="cordova.plugins.powerManagement" />
+        </js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="PowerManagement">
                 <param name="wp-package" value="PowerManagement"/>
@@ -35,6 +37,9 @@
 
     <!-- android -->
     <platform name="android">
+        <js-module src="www/powermanagement.js" name="device">
+            <clobbers target="cordova.plugins.powerManagement" />
+        </js-module>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="PowerManagement" >
                 <param name="android-package" value="org.apache.cordova.powermanagement.PowerManagement"/>
